@@ -1,0 +1,46 @@
+.booksPage {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.booksList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid rgb(199, 199, 199);
+}
+
+.booksItem {
+  height: 8rem;
+  border: 2px solid rgb(199, 199, 199);
+}
+
+.newBookForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.4rem;
+}
+
+.newBookForm form {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.newBookForm form input {
+  width: 60rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.newBookForm form select {
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.newBookForm form button {
+  width: 15rem;
+}
