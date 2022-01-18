@@ -14,7 +14,7 @@ function BooksList() {
   return (
     <ul className="booksList">
       {booksList.map((book) => (
-        <BookItem key={book.id} id={book.id} />
+        <BookItem key={book.id} id={book.id} title={book.title} />
       ))}
     </ul>
   );
