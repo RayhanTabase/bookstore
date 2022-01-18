@@ -4,7 +4,12 @@ import BookItem from './BookItem';
 
 function BooksList() {
   const { booksReducer: books } = store.getState();
-  const [booksList] = useState([...books]);
+  const [booksList, setBooksList] = useState([...books]);
+
+  store.subscribe(async () => {
+    const { booksReducer: books } = await store.getState();
+    setBooksList(books);
+  });
 
   return (
     <ul className="booksList">
