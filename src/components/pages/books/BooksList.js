@@ -1,24 +1,18 @@
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import store from '../../../redux/configureStore';
 import BookItem from './BookItem';
 
-function BooksList(props) {
-  const { books } = props;
+function BooksList() {
+  const { booksReducer: books } = store.getState();
+  const [booksList] = useState([...books]);
+
   return (
     <ul className="booksList">
-      {books.map((book) => (
-        <BookItem key={book.id} />
+      {booksList.map((book) => (
+        <BookItem key={book.id} id={book.id} />
       ))}
     </ul>
   );
 }
-
-BooksList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      author: PropTypes.string,
-    }),
-  ).isRequired,
-};
 
 export default BooksList;

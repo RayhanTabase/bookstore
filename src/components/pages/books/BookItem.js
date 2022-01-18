@@ -1,4 +1,15 @@
-function BookItem() {
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../../redux/books/books';
+
+function BookItem(props) {
+  const dispatch = useDispatch();
+
+  const removeBookFromStore = () => {
+    const { id } = props;
+    dispatch(removeBook(id));
+  };
+
   return (
     <li className="booksItem">
       <div className="booksDetails">
@@ -8,7 +19,7 @@ function BookItem() {
 
         <div>
           <button type="button">Comments</button>
-          <button type="button">Remove</button>
+          <button type="button" onClick={removeBookFromStore}>Remove</button>
           <button type="button">Edit</button>
         </div>
 
@@ -16,5 +27,9 @@ function BookItem() {
     </li>
   );
 }
+
+BookItem.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 export default BookItem;
