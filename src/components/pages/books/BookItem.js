@@ -1,21 +1,42 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../../redux/books/books';
+import {
+  removeBook, startRequest, requestFailure, requestSuccess,
+} from '../../../redux/books/books';
 
 function BookItem(props) {
   const dispatch = useDispatch();
+  const { id, title, category } = props;
 
-  const { id, title } = props;
+  const deleteBook = () => async (dispatch) => {
+    dispatch(startRequest());
+    try {
+      const submission = await fetch(
+        `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/6i75I2hGz2gRajhxffhE/books/${id}`,
+        {
+          method: 'DELETE',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+        },
+      );
+      if (submission.status === 201) dispatch(removeBook(id));
+      dispatch(requestSuccess());
+    } catch (error) {
+      dispatch(requestFailure(error.message));
+    }
+  };
+
   const removeBookFromStore = () => {
-    dispatch(removeBook(id));
+    dispatch(deleteBook());
   };
 
   return (
     <li className="booksItem">
       <div className="booksDetails">
-        <p>Category</p>
+        <p>{category}</p>
         <h2>{title}</h2>
-        <p>author</p>
 
         <div>
           <button type="button">Comments</button>
@@ -31,7 +52,7 @@ function BookItem(props) {
 BookItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-
+  category: PropTypes.string.isRequired,
 };
 
 export default BookItem;
