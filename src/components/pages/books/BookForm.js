@@ -36,7 +36,14 @@ function BookForm() {
             Accept: 'application/json',
           },
         });
-      if (submission.status === 201) dispatch(addBook(newBook));
+      if (submission.status === 201) {
+        dispatch(addBook(newBook));
+        // Reset state values
+        setNewBookData({
+          title: '',
+          category: '',
+        });
+      }
       dispatch(requestSuccess());
     } catch (error) {
       dispatch(requestFailure(error.message));
@@ -52,18 +59,26 @@ function BookForm() {
 
   const checkEmpty = () => !(title.trim() || category.trim());
 
-  const submitBookToStore = () => {
+  const submitBookToStore = (e) => {
+    e.preventDefault();
     if (!checkEmpty()) return dispatch(submitBook());
     return false;
   };
 
+  const categories = ['fiction', 'action', 'comedy', 'romance'];
+
   return (
     <section className="newBookForm">
       <h2>ADD NEW BOOK</h2>
-      <form>
-        <input name="title" placeholder="Title" value={title} onChange={handleChange} />
-        <input name="category" placeholder="Category" value={category} onChange={handleChange} />
-        <button type="button" onClick={submitBookToStore}>ADD BOOK</button>
+      <form onSubmit={submitBookToStore}>
+        <input name="title" placeholder="Title" value={title} onChange={handleChange} required />
+        <select name="category" value={category} onChange={handleChange} required>
+          <option value="" disabled>Choose a category ...</option>
+          {categories.map((category) => (
+            <option key={category} value={category}>{category.toUpperCase()}</option>
+          ))}
+        </select>
+        <button type="submit">ADD BOOK</button>
       </form>
     </section>
   );
