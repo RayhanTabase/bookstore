@@ -9,10 +9,10 @@ function BookForm() {
   const dispatch = useDispatch();
   const [newbookData, setNewBookData] = useState({
     title: '',
-    author: '',
+    category: '',
   });
 
-  const { title, author } = newbookData;
+  const { title, category } = newbookData;
 
   const submitBook = () => async (dispatch) => {
     dispatch(startRequest());
@@ -20,7 +20,7 @@ function BookForm() {
       const newBook = {
         id: uuidv4(),
         title,
-        author,
+        category,
       };
       const submission = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/6i75I2hGz2gRajhxffhE/books',
         {
@@ -28,7 +28,7 @@ function BookForm() {
           body: JSON.stringify({
             item_id: newBook.id,
             title: newBook.title,
-            category: 'Fiction',
+            category: newBook.category,
           }),
           mode: 'cors',
           headers: {
@@ -50,7 +50,7 @@ function BookForm() {
     }));
   };
 
-  const checkEmpty = () => !(title.trim() || author.trim());
+  const checkEmpty = () => !(title.trim() || category.trim());
 
   const submitBookToStore = () => {
     if (!checkEmpty()) return dispatch(submitBook());
@@ -62,7 +62,7 @@ function BookForm() {
       <h2>ADD NEW BOOK</h2>
       <form>
         <input name="title" placeholder="Title" value={title} onChange={handleChange} />
-        <input name="author" placeholder="Author" value={author} onChange={handleChange} />
+        <input name="category" placeholder="Category" value={category} onChange={handleChange} />
         <button type="button" onClick={submitBookToStore}>ADD BOOK</button>
       </form>
     </section>
