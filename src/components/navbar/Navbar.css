@@ -19,7 +19,7 @@ li .active {
 .navbar {
   display: flex;
   width: 100%;
-  column-gap: 2.938rem;;
+  column-gap: 2.938rem;
   border-bottom: solid 1px #e8e8e8;
   align-items: center;
   height: 5.938rem;

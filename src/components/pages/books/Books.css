@@ -40,7 +40,7 @@
 select {
   width: 41.5rem;
   height: 2.813rem;
-  padding-left: 1.063rem ;
+  padding-left: 1.063rem;
   font-size: 1rem;
   letter-spacing: -0.15px;
   font-family: 'Montserrat', sans-serif;
@@ -103,6 +103,15 @@ select {
   margin-bottom: 0.25rem;
 }
 
+.booksItem .currentChapter p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  letter-spacing: -0.4px;
+  margin-bottom: 1.438rem;
+}
+
 .booksItem .booksDetails .details p {
   font-family: 'Roboto Slab', serif;
   font-size: 0.875rem;
@@ -113,6 +122,19 @@ select {
 
 .booksItem .booksDetails .editButtons {
   display: flex;
+}
+
+.booksItem .currentChapter button {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  width: 11.5rem;
+  height: 2.063rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #e8e8e8;
 }
 
 .booksItem .booksDetails .editButtons button {
@@ -149,31 +171,8 @@ select {
   margin-bottom: 0.438rem;
 }
 
-.booksItem .currentChapter p {
-  font-family: 'Roboto Slab', serif;
-  font-size: 1rem;
-  font-weight: 300;
-  font-stretch: normal;
-  letter-spacing: -0.4px;
-  margin-bottom: 1.438rem;
-}
-
 .booksItem .currentChapter p .chapter {
   margin-right: 0.3rem;
-}
-
-
-.booksItem .currentChapter button {
-  font-family: 'Roboto Slab', serif;
-  font-size: 0.813rem;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  width: 11.5rem;
-  height: 2.063rem;
-  border: none;
-  border-radius: 3px;
-  background-color: #0290ff;
-  color: #e8e8e8;
 }
 
 .booksItem .bookProgress {
@@ -190,12 +189,13 @@ select {
   flex-direction: column;
   row-gap: 0.438rem;
 }
+
 .booksItem .bookProgress .completionText .rate {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
 }
 
-.booksItem .bookProgress .completionText .completedPlaceHolder{
+.booksItem .bookProgress .completionText .completedPlaceHolder {
   opacity: 0.5;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
