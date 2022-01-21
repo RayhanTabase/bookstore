@@ -1,32 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
 li {
   list-style: none;
 }
 
 li a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.582);
+  color: #e9e9e9;
+  font-weight: 400;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
 }
 
 li .active {
-  color: black;
+  color: #121212;
 }
 
 .navbar {
   display: flex;
-  column-gap: 2rem;
-  border-bottom: 2px solid rgb(199, 199, 199);
+  width: 100%;
+  column-gap: 2.938rem;;
+  border-bottom: solid 1px #e8e8e8;
   align-items: center;
-  height: 5rem;
-  margin-bottom: 2rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.25rem 1.688rem 6.25rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links {
   display: flex;
-  column-gap: 2rem;
+  column-gap: 2.563rem;
+  justify-self: flex-start;
 }
 
 .navbar .navbar-text {
-  color: #0091ff;
+  color: #0290ff;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.navbar .loginIcon {
+  margin-left: auto;
 }

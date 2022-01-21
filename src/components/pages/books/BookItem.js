@@ -4,6 +4,10 @@ import {
   removeBook, startRequest, requestFailure, requestSuccess,
 } from '../../../redux/books/books';
 
+import BooksDetails from './BookDetails';
+import BookProgress from './BookProgress';
+import CurrentChapter from './CurrentChapter';
+
 function BookItem(props) {
   const dispatch = useDispatch();
   const { id, title, category } = props;
@@ -34,17 +38,13 @@ function BookItem(props) {
 
   return (
     <li className="booksItem">
-      <div className="booksDetails">
-        <p>{category}</p>
-        <h2>{title}</h2>
-
-        <div>
-          <button type="button">Comments</button>
-          <button type="button" onClick={removeBookFromStore}>Remove</button>
-          <button type="button">Edit</button>
-        </div>
-
-      </div>
+      <BooksDetails
+        category={category}
+        title={title}
+        removeBookFromStore={removeBookFromStore}
+      />
+      <BookProgress />
+      <CurrentChapter />
     </li>
   );
 }

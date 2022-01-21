@@ -1,20 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
 .booksPage {
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
 }
 
 .booksList {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 2px solid rgb(199, 199, 199);
-}
-
-.booksItem {
-  height: 8rem;
-  border: 2px solid rgb(199, 199, 199);
+  row-gap: 0.938rem;
+  margin-bottom: 2.5rem;
 }
 
 .newBookForm {
@@ -22,6 +17,18 @@
   flex-direction: column;
   justify-content: space-between;
   row-gap: 1.4rem;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 1.813rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: -0.18px;
+}
+
+.newBookForm h2 {
+  color: #888;
+  letter-spacing: -0.18px;
+  font-size: 1.25rem;
+  margin-bottom: 1.188rem;
+  font-weight: 700;
 }
 
 .newBookForm form {
@@ -29,18 +36,172 @@
   column-gap: 2rem;
 }
 
-.newBookForm form input {
-  width: 60rem;
-  height: 2rem;
-  padding: 0.5rem;
+.newBookForm form input,
+select {
+  width: 41.5rem;
+  height: 2.813rem;
+  padding-left: 1.063rem ;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
-.newBookForm form select {
-  width: 20rem;
-  height: 2rem;
-  padding: 0.5rem;
+.newBookForm .defaultCategoryTitle {
+  color: #888;
+}
+
+.newBookForm .showBold {
+  color: black;
 }
 
 .newBookForm form button {
-  width: 15rem;
+  width: 11.25rem;
+  height: 2.813rem;
+  padding: 0.801rem 1.3rem 0.886rem 1.3rem;
+  border: 2px solid #0290ff;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+}
+
+.booksItem {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  height: 10.625rem;
+  border: 1px solid #e8e8e8;
+  padding-left: 1.688rem;
+  padding-right: 1.688rem;
+  padding-top: 2rem;
+  padding-bottom: 1.7rem;
+}
+
+.booksItem .booksDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7rem;
+}
+
+.booksItem .booksDetails .details h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  opacity: 0.5;
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
+}
+
+.booksItem .booksDetails .details h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.25rem;
+}
+
+.booksItem .booksDetails .details p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  text-transform: capitalize;
+}
+
+.booksItem .booksDetails .editButtons {
+  display: flex;
+}
+
+.booksItem .booksDetails .editButtons button {
+  width: fit-content;
+  height: 1.188rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  background: none;
+  border: none;
+  border-right: 2px solid #e8e8e8;
+  padding-right: 0.938rem;
+  padding-left: 1.063rem;
+}
+
+.booksItem .booksDetails .editButtons button:nth-last-child(1) {
+  border-right: none;
+}
+
+.booksItem .booksDetails .editButtons button:nth-child(1) {
+  padding-left: 0;
+}
+
+.booksItem .currentChapter {
+  padding-left: 3.688rem;
+}
+
+.booksItem .currentChapter h4 {
+  opacity: 0.5;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  margin-bottom: 0.438rem;
+}
+
+.booksItem .currentChapter p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  letter-spacing: -0.4px;
+  margin-bottom: 1.438rem;
+}
+
+.booksItem .currentChapter p .chapter {
+  margin-right: 0.3rem;
+}
+
+
+.booksItem .currentChapter button {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  width: 11.5rem;
+  height: 2.063rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #e8e8e8;
+}
+
+.booksItem .bookProgress {
+  border-right: 1px solid #e8e8e8;
+  padding-right: 3.688rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 1.313rem;
+}
+
+.booksItem .bookProgress .completionText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.438rem;
+}
+.booksItem .bookProgress .completionText .rate {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+.booksItem .bookProgress .completionText .completedPlaceHolder{
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+}
+
+.booksItem .bookProgress .completionBar {
+  width: 7rem;
+  height: 7rem;
 }
