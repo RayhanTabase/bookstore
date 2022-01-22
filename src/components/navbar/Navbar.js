@@ -29,6 +29,7 @@ function Navbar() {
           </li>
         ))}
       </ul>
+      <p className="loginIcon">Login</p>
     </nav>
   );
 }

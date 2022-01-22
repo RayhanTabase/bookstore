@@ -71,14 +71,14 @@ function BookForm() {
     <section className="newBookForm">
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={submitBookToStore}>
-        <input name="title" placeholder="Title" value={title} onChange={handleChange} required />
-        <select name="category" value={category} onChange={handleChange} required>
-          <option value="" disabled>Choose a category ...</option>
+        <input name="title" placeholder="Book title" value={title} onChange={handleChange} required />
+        <select name="category" className={category === '' ? 'defaultCategoryTitle' : ''} value={category} onChange={handleChange} required>
+          <option value="" disabled className="defaultCategoryTitle">Category </option>
           {categories.map((category) => (
-            <option key={category} value={category}>{category.toUpperCase()}</option>
+            <option key={category} value={category} className="showBold">{category.toUpperCase()}</option>
           ))}
         </select>
-        <button type="submit">ADD BOOK</button>
+        <button type="submit">ADD A BOOK</button>
       </form>
     </section>
   );
