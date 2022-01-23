@@ -6,6 +6,9 @@ Book store is an app that displays a list of books, allows users to add a new bo
 ## Screenshots
 ![screenshot](./screenshot/pc.jpeg)
 
+## Live version
+[gh-pages](https://rayhantabase.github.io/bookstore/)
+
 ## Built With
 - React
 - CSS
